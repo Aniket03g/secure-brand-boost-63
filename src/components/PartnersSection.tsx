@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { useMediaQuery } from "@/hooks/use-mobile";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const PartnersSection = () => {
   const partners = [
@@ -21,8 +21,8 @@ const PartnersSection = () => {
     { name: "D-Link", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/D-Link_logo.svg/1280px-D-Link_logo.svg.png" },
   ];
 
-  const isMobile = useMediaQuery("(max-width: 768px)");
-  const itemsToShow = isMobile ? 1 : 4;
+  const isMobile = useIsMobile();
+  const itemsToShow = isMobile ? 1 : 1; // Updated to show only 1 item at a time (looping one by one)
   const [api, setApi] = useState<any>(null);
   
   // Auto-rotate the carousel
@@ -58,12 +58,12 @@ const PartnersSection = () => {
           >
             <CarouselContent>
               {partners.map((partner, index) => (
-                <CarouselItem key={index} className={`md:basis-1/${itemsToShow}`}>
+                <CarouselItem key={index} className="basis-full">
                   <div className="bg-white p-6 flex items-center justify-center h-32 border border-gray-200 rounded-lg hover:shadow-md transition-shadow mx-2">
                     <img
                       src={partner.logo}
                       alt={`${partner.name} logo`}
-                      className="max-h-12 max-w-full grayscale hover:grayscale-0 transition-all"
+                      className="max-h-12 max-w-full hover:opacity-75 transition-all"
                     />
                   </div>
                 </CarouselItem>

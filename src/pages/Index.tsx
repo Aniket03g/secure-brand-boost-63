@@ -1,4 +1,3 @@
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
@@ -65,9 +64,9 @@ const Index = () => {
         <ClientsSection />
         
         <CTASection />
-        
-        <ChatWidget />
       </main>
+      
+      <ChatWidget />
       
       <Footer />
     </div>

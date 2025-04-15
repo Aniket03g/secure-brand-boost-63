@@ -50,7 +50,7 @@ const HeroSection = () => {
           <div className="md:col-span-5">
             <div className="rounded-lg overflow-hidden shadow-2xl bg-white p-2">
               <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800"
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800"
                 alt="IT Consultancy Services"
                 className="rounded-md w-full h-auto"
               />
