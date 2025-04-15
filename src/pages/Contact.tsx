@@ -1,7 +1,7 @@
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SecureContactForm from "../components/SecureContactForm";
+import ChatWidget from "../components/ChatWidget";
 import { Mail, Phone, MapPin, Globe, Clock, Shield } from 'lucide-react';
 import { Helmet } from "react-helmet";
 
@@ -126,6 +126,8 @@ const Contact = () => {
             </p>
           </div>
         </section>
+        
+        <ChatWidget />
       </main>
       
       <Footer />

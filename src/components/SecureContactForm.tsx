@@ -28,7 +28,8 @@ const SecureContactForm = () => {
     phone: '',
     company: '',
     message: '',
-    captchaResponse: ''
+    captchaResponse: '',
+    honeypot: '' // Added the missing honeypot field
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
