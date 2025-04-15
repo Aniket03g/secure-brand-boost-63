@@ -1,5 +1,13 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { useMediaQuery } from "@/hooks/use-mobile";
 
 const PartnersSection = () => {
   const partners = [
@@ -13,6 +21,21 @@ const PartnersSection = () => {
     { name: "D-Link", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/D-Link_logo.svg/1280px-D-Link_logo.svg.png" },
   ];
 
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const itemsToShow = isMobile ? 1 : 4;
+  const [api, setApi] = useState<any>(null);
+  
+  // Auto-rotate the carousel
+  useEffect(() => {
+    if (!api) return;
+    
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, [api]);
+
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 md:px-6">
@@ -24,16 +47,31 @@ const PartnersSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {partners.map((partner, index) => (
-            <div key={index} className="bg-white p-6 flex items-center justify-center h-32 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-              <img
-                src={partner.logo}
-                alt={`${partner.name} logo`}
-                className="max-h-12 max-w-full grayscale hover:grayscale-0 transition-all"
-              />
-            </div>
-          ))}
+        <div className="relative px-10">
+          <Carousel 
+            setApi={setApi}
+            className="mx-auto max-w-6xl"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              {partners.map((partner, index) => (
+                <CarouselItem key={index} className={`md:basis-1/${itemsToShow}`}>
+                  <div className="bg-white p-6 flex items-center justify-center h-32 border border-gray-200 rounded-lg hover:shadow-md transition-shadow mx-2">
+                    <img
+                      src={partner.logo}
+                      alt={`${partner.name} logo`}
+                      className="max-h-12 max-w-full grayscale hover:grayscale-0 transition-all"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2" />
+            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2" />
+          </Carousel>
         </div>
       </div>
     </section>

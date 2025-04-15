@@ -29,6 +29,7 @@ const ChatWidget = () => {
   const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleSendMessage = async () => {
     if (!input.trim()) return;
@@ -56,16 +57,16 @@ const ChatWidget = () => {
   };
 
   return (
-    <Sheet>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <Button
-          className="fixed bottom-6 right-6 h-14 w-14 rounded-full p-0 shadow-lg"
+          className="fixed bottom-6 right-6 h-14 w-14 rounded-full p-0 shadow-lg z-50"
           size="icon"
         >
           <MessageCircle className="h-6 w-6" />
         </Button>
       </SheetTrigger>
-      <SheetContent className="w-[400px] sm:w-[540px]">
+      <SheetContent className="w-[95%] sm:w-[400px] md:w-[540px]">
         <SheetHeader>
           <SheetTitle className="flex items-center gap-2">
             <Bot className="h-5 w-5" />

@@ -9,6 +9,7 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import SecureContactForm from "../components/SecureContactForm";
 import StatsSection from "../components/StatsSection";
 import CTASection from "../components/CTASection";
+import ChatWidget from "../components/ChatWidget";
 import { Helmet } from "react-helmet";
 
 const Index = () => {
@@ -64,6 +65,8 @@ const Index = () => {
         <ClientsSection />
         
         <CTASection />
+        
+        <ChatWidget />
       </main>
       
       <Footer />
