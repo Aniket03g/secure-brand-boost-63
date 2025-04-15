@@ -1,0 +1,33 @@
+
+# Allow all web crawlers
+User-agent: *
+Allow: /
+
+# Block spam bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: Yandex
+Disallow: /
+
+# Prevent crawling of form submissions
+Disallow: /contact$
+Disallow: /contact/
+
+# Block access to admin areas (if they exist)
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login/
+Disallow: /login/
+
+# Sitemap location
+Sitemap: https://yourdomain.com/sitemap.xml
