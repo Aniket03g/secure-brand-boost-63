@@ -1,4 +1,5 @@
-import { Server, Shield, Cpu, Cloud, ShoppingCart } from 'lucide-react';
+
+import { Server, Shield, Cpu, Cloud, ShoppingCart, Network, Users, Code } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface ServiceCardProps {

@@ -3,7 +3,7 @@ import React from 'react';
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { Helmet } from "react-helmet";
-import { laptop, hardDrive } from 'lucide-react';
+import { Laptop, HardDrive } from 'lucide-react';
 
 const HardwareSolutions = () => {
   const products = [
