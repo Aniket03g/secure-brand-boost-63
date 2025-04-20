@@ -18,6 +18,7 @@ import MicrosoftSolutions from "./pages/services/MicrosoftSolutions";
 import ITConsultancy from "./pages/services/ITConsultancy";
 import SoftwareDevelopment from "./pages/services/SoftwareDevelopment";
 import ITInfrastructure from "./pages/services/ITInfrastructure";
+import NetworkingSolutions from "./pages/services/NetworkingSolutions";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/services/consultancy" element={<ITConsultancy />} />
           <Route path="/services/software" element={<SoftwareDevelopment />} />
           <Route path="/services/infrastructure" element={<ITInfrastructure />} />
+          <Route path="/services/networking" element={<NetworkingSolutions />} />
           <Route path="/products" element={<Products />} />
           <Route path="/clients" element={<Clients />} />
           <Route path="/contact" element={<Contact />} />

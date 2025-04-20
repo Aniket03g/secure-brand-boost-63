@@ -1,11 +1,15 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { Helmet } from "react-helmet";
 import { Laptop, HardDrive } from 'lucide-react';
 
 const HardwareSolutions = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   const products = [
     {
       category: "Laptops & Notebooks",

@@ -109,6 +109,7 @@ const ServicesSection = () => {
           <Link 
             to="/services" 
             className="bg-vtech-blue text-white hover:bg-vtech-darkBlue transition-colors px-6 py-3 rounded-md font-medium inline-flex items-center"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             View All Services
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

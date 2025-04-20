@@ -11,7 +11,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const PartnersSection = () => {
   const partners = [
-    { name: "HP", logo: "/lovable-uploads/521b9f2a-9956-4900-92ce-1ad23cf28f12.png" },
+    { name: "HP", logo: "/lovable-uploads/f922908d-fde3-4166-8180-7c89af63174f.png" },
     { name: "Dell", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/1200px-Dell_logo_2016.svg.png" },
     { name: "Lenovo", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/1280px-Lenovo_logo_2015.svg.png" },
     { name: "Cisco", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1280px-Cisco_logo_blue_2016.svg.png" },
