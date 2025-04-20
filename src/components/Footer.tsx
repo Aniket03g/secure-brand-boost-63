@@ -1,5 +1,3 @@
-
-import Logo from './Logo';
 import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin, Lock, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -12,7 +10,6 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <Logo className="mb-4" />
             <p className="mt-4 text-sm leading-relaxed opacity-80">
               A System Integration company providing global IT infrastructure solutions, hardware, software, and consultancy services based in Pune, India.
             </p>

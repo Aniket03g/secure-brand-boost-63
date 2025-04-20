@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +15,9 @@ import HardwareSolutions from "./pages/services/HardwareSolutions";
 import SecurityServices from "./pages/services/SecurityServices";
 import CloudServices from "./pages/services/CloudServices";
 import MicrosoftSolutions from "./pages/services/MicrosoftSolutions";
+import ITConsultancy from "./pages/services/ITConsultancy";
+import SoftwareDevelopment from "./pages/services/SoftwareDevelopment";
+import ITInfrastructure from "./pages/services/ITInfrastructure";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +35,9 @@ const App = () => (
           <Route path="/services/security" element={<SecurityServices />} />
           <Route path="/services/cloud" element={<CloudServices />} />
           <Route path="/services/microsoft" element={<MicrosoftSolutions />} />
+          <Route path="/services/consultancy" element={<ITConsultancy />} />
+          <Route path="/services/software" element={<SoftwareDevelopment />} />
+          <Route path="/services/infrastructure" element={<ITInfrastructure />} />
           <Route path="/products" element={<Products />} />
           <Route path="/clients" element={<Clients />} />
           <Route path="/contact" element={<Contact />} />
