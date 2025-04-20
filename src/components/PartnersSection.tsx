@@ -11,18 +11,16 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const PartnersSection = () => {
   const partners = [
-    { name: "HP", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" },
+    { name: "HP", logo: "/lovable-uploads/521b9f2a-9956-4900-92ce-1ad23cf28f12.png" },
     { name: "Dell", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/1200px-Dell_logo_2016.svg.png" },
     { name: "Lenovo", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/1280px-Lenovo_logo_2015.svg.png" },
     { name: "Cisco", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1280px-Cisco_logo_blue_2016.svg.png" },
     { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1280px-Microsoft_logo.svg.png" },
     { name: "Acer", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Acer_2011.svg/1280px-Acer_2011.svg.png" },
-    { name: "APC", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/APC_logo.svg/1280px-APC_logo.svg.png" },
-    { name: "D-Link", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/D-Link_logo.svg/1280px-D-Link_logo.svg.png" },
+    { name: "D-Link", logo: "/lovable-uploads/f02ab59d-32d1-4b93-a13f-b075b8a8d960.png" },
   ];
 
   const isMobile = useIsMobile();
-  const itemsToShow = isMobile ? 1 : 1; // Updated to show only 1 item at a time (looping one by one)
   const [api, setApi] = useState<any>(null);
   
   // Auto-rotate the carousel
@@ -58,7 +56,7 @@ const PartnersSection = () => {
           >
             <CarouselContent>
               {partners.map((partner, index) => (
-                <CarouselItem key={index} className="basis-full">
+                <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
                   <div className="bg-white p-6 flex items-center justify-center h-32 border border-gray-200 rounded-lg hover:shadow-md transition-shadow mx-2">
                     <img
                       src={partner.logo}
@@ -69,8 +67,8 @@ const PartnersSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2" />
-            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2" />
+            <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2" />
+            <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2" />
           </Carousel>
         </div>
       </div>
