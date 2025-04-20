@@ -1,5 +1,4 @@
-
-import { Server, Network, Shield, Cpu, Users, Code } from 'lucide-react';
+import { Server, Shield, Cpu, Cloud, ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface ServiceCardProps {
@@ -33,6 +32,30 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, lin
 const ServicesSection = () => {
   const services = [
     {
+      title: "Hardware Solutions",
+      description: "Complete range of hardware including laptops, desktops, servers, and all-in-one PCs from leading brands.",
+      icon: <Cpu size={24} />,
+      link: "/services/hardware"
+    },
+    {
+      title: "Security Services",
+      description: "Comprehensive security solutions including antiviruses, firewalls, and network security.",
+      icon: <Shield size={24} />,
+      link: "/services/security"
+    },
+    {
+      title: "Cloud Services",
+      description: "Cloud computing solutions, storage, and infrastructure services for your business.",
+      icon: <Cloud size={24} />,
+      link: "/services/cloud"
+    },
+    {
+      title: "Microsoft Solutions",
+      description: "Licensed Microsoft products including Windows, Office 365, and enterprise solutions.",
+      icon: <ShoppingCart size={24} />,
+      link: "/services/microsoft"
+    },
+    {
       title: "IT Infrastructure",
       description: "Design and implementation of robust IT infrastructure tailored to your business needs.",
       icon: <Server size={24} />,
@@ -43,18 +66,6 @@ const ServicesSection = () => {
       description: "Complete networking solutions with hardware from top vendors like Cisco, HP, and more.",
       icon: <Network size={24} />,
       link: "/services/networking"
-    },
-    {
-      title: "Security Services",
-      description: "Comprehensive security solutions to protect your business from threats.",
-      icon: <Shield size={24} />,
-      link: "/services/security"
-    },
-    {
-      title: "Hardware Solutions",
-      description: "Premium hardware from trusted brands like HP, Dell, Lenovo, and Acer.",
-      icon: <Cpu size={24} />,
-      link: "/services/hardware"
     },
     {
       title: "IT Consultancy",
