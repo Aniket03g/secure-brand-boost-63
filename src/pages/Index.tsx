@@ -23,7 +23,7 @@ const Index = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="pt-16">
+      <div>
         <HeroSection />
         <ServicesSection />
         <StatsSection />
