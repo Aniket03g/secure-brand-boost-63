@@ -10,6 +10,7 @@ import PartnersSection from '@/components/PartnersSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet';
+import ChatWidget from '@/components/ChatWidget';
 
 const Index = () => {
   return (
@@ -32,6 +33,7 @@ const Index = () => {
         <CTASection />
       </div>
       <Footer />
+      <ChatWidget />
     </div>
   );
 };
