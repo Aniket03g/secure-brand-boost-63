@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -20,26 +20,24 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/certificates" element={<Certificates />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/clients" element={<Clients />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/services/it-consultancy" element={<ITConsultancy />} />
-        <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
-        <Route path="/services/networking-solutions" element={<NetworkingSolutions />} />
-        <Route path="/services/security-services" element={<SecurityServices />} />
-        <Route path="/services/hardware-solutions" element={<HardwareSolutions />} />
-        <Route path="/services/microsoft-solutions" element={<MicrosoftSolutions />} />
-        <Route path="/services/software-development" element={<SoftwareDevelopment />} />
-        <Route path="/services/cloud-services" element={<CloudServices />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/certificates" element={<Certificates />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/clients" element={<Clients />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/services/it-consultancy" element={<ITConsultancy />} />
+      <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
+      <Route path="/services/networking-solutions" element={<NetworkingSolutions />} />
+      <Route path="/services/security-services" element={<SecurityServices />} />
+      <Route path="/services/hardware-solutions" element={<HardwareSolutions />} />
+      <Route path="/services/microsoft-solutions" element={<MicrosoftSolutions />} />
+      <Route path="/services/software-development" element={<SoftwareDevelopment />} />
+      <Route path="/services/cloud-services" element={<CloudServices />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
