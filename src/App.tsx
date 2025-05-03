@@ -10,7 +10,6 @@ import NotFound from "./pages/NotFound";
 import Certificates from "./pages/Certificates";
 import ITConsultancy from "./pages/services/ITConsultancy";
 import ITInfrastructure from "./pages/services/ITInfrastructure";
-import NetworkingSolutions from "./pages/services/NetworkingSolutions";
 import SecurityServices from "./pages/services/SecurityServices";
 import HardwareSolutions from "./pages/services/HardwareSolutions";
 import MicrosoftSolutions from "./pages/services/MicrosoftSolutions";
@@ -30,7 +29,6 @@ function App() {
       <Route path="/products" element={<Products />} />
       <Route path="/services/it-consultancy" element={<ITConsultancy />} />
       <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
-      <Route path="/services/networking-solutions" element={<NetworkingSolutions />} />
       <Route path="/services/security-services" element={<SecurityServices />} />
       <Route path="/services/hardware-solutions" element={<HardwareSolutions />} />
       <Route path="/services/microsoft-solutions" element={<MicrosoftSolutions />} />

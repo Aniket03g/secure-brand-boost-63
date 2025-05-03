@@ -13,9 +13,11 @@ const SecurityServices = () => {
         "Antivirus Solutions",
         "Anti-malware Protection",
         "Endpoint Detection and Response (EDR)",
-        "Device Control Management"
+        "Device Control Management",
+        "Data Encryption",
+        "Remote Device Management"
       ],
-      providers: ["Kaspersky", "McAfee", "Norton", "Bitdefender"]
+      providers: ["Kaspersky", "McAfee", "Norton", "Bitdefender", "ESET", "Avast"]
     },
     {
       category: "Network Security",
@@ -23,9 +25,11 @@ const SecurityServices = () => {
         "Firewall Solutions",
         "Intrusion Detection Systems",
         "VPN Solutions",
-        "Network Access Control"
+        "Network Access Control",
+        "Web Application Firewalls",
+        "DDoS Protection"
       ],
-      providers: ["Cisco", "Fortinet", "Palo Alto", "SonicWall"]
+      providers: ["Cisco", "Fortinet", "Palo Alto", "SonicWall", "Check Point", "Juniper"]
     },
     {
       category: "Data Security",
@@ -33,9 +37,23 @@ const SecurityServices = () => {
         "Data Encryption",
         "Data Loss Prevention",
         "Secure File Sharing",
-        "Backup Solutions"
+        "Backup Solutions",
+        "Database Security",
+        "Cloud Security"
       ],
-      providers: ["Symantec", "Microsoft", "IBM", "Trend Micro"]
+      providers: ["Symantec", "Microsoft", "IBM", "Trend Micro", "Sophos", "Veeam"]
+    },
+    {
+      category: "Security Services",
+      items: [
+        "Security Audits & Assessments",
+        "Vulnerability Management",
+        "Security Awareness Training",
+        "Incident Response Planning",
+        "Compliance Management",
+        "24/7 Security Monitoring"
+      ],
+      providers: ["CrowdStrike", "Rapid7", "Tenable", "KnowBe4", "Qualys", "Trustwave"]
     }
   ];
 
@@ -51,7 +69,7 @@ const SecurityServices = () => {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-vtech-gray mb-8 animate-fade-in">Security Services</h1>
           
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow animate-fade-in">
                 <Shield className="text-vtech-blue mb-4" size={24} />

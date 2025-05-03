@@ -1,5 +1,5 @@
 
-import { Server, Shield, Cpu, Cloud, ShoppingCart, Network, Users, Code } from 'lucide-react';
+import { Server, Shield, Cpu, Cloud, ShoppingCart, Code, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface ServiceCardProps {
@@ -34,52 +34,46 @@ const ServicesSection = () => {
   const services = [
     {
       title: "Hardware Solutions",
-      description: "Complete range of hardware including laptops, desktops, servers, and all-in-one PCs from leading brands.",
+      description: "Complete range of hardware including laptops, desktops, servers, all-in-one PCs, peripherals and networking equipment from leading brands.",
       icon: <Cpu size={24} />,
-      link: "/services/hardware"
+      link: "/services/hardware-solutions"
     },
     {
       title: "Security Services",
-      description: "Comprehensive security solutions including antiviruses, firewalls, and network security.",
+      description: "Comprehensive security solutions including antiviruses, firewalls, endpoint protection, and advanced network security infrastructure.",
       icon: <Shield size={24} />,
-      link: "/services/security"
+      link: "/services/security-services"
     },
     {
       title: "Cloud Services",
-      description: "Cloud computing solutions, storage, and infrastructure services for your business.",
+      description: "Cloud computing solutions with AWS, Azure, Google Cloud and other providers for storage, infrastructure and application hosting.",
       icon: <Cloud size={24} />,
-      link: "/services/cloud"
+      link: "/services/cloud-services"
     },
     {
       title: "Microsoft Solutions",
-      description: "Licensed Microsoft products including Windows, Office 365, and enterprise solutions.",
+      description: "Licensed Microsoft products including Windows 11, Office 365, Microsoft 365, and enterprise solutions with official support.",
       icon: <ShoppingCart size={24} />,
-      link: "/services/microsoft"
+      link: "/services/microsoft-solutions"
     },
     {
       title: "IT Infrastructure",
-      description: "Design and implementation of robust IT infrastructure tailored to your business needs.",
+      description: "Complete office setup from designing server rooms to implementing networks, structured cabling, and full office IT environments.",
       icon: <Server size={24} />,
-      link: "/services/infrastructure"
+      link: "/services/it-infrastructure"
     },
     {
-      title: "Networking Solutions",
-      description: "Complete networking solutions with hardware from top vendors like Cisco, HP, and more.",
-      icon: <Network size={24} />,
-      link: "/services/networking"
+      title: "Software Solutions",
+      description: "Software delivery, installation, configuration, and custom development services for web, mobile and enterprise applications.",
+      icon: <Code size={24} />,
+      link: "/services/software-development"
     },
     {
       title: "IT Consultancy",
-      description: "Expert advice and strategic planning for your IT requirements.",
+      description: "Expert advice and strategic planning for your IT requirements and digital transformation initiatives.",
       icon: <Users size={24} />,
-      link: "/services/consultancy"
-    },
-    {
-      title: "Software Development",
-      description: "Custom software development and integration services.",
-      icon: <Code size={24} />,
-      link: "/services/software"
-    },
+      link: "/services/it-consultancy"
+    }
   ];
 
   return (

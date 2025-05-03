@@ -13,18 +13,23 @@ const HardwareSolutions = () => {
   const products = [
     {
       category: "Laptops & Notebooks",
-      items: ["Business Laptops", "Gaming Laptops", "Workstation Laptops", "Ultrabooks"],
-      brands: ["HP", "Dell", "Lenovo", "Acer"]
+      items: ["Business Laptops", "Gaming Laptops", "Workstation Laptops", "Ultrabooks", "Budget Laptops", "Student Laptops"],
+      brands: ["HP", "Dell", "Lenovo", "Acer", "Microsoft Surface", "ASUS"]
     },
     {
       category: "Desktop Computers",
-      items: ["Business Desktops", "Gaming PCs", "Workstations", "Mini PCs"],
-      brands: ["HP", "Dell", "Lenovo", "Custom Built"]
+      items: ["Business Desktops", "Gaming PCs", "Workstations", "Mini PCs", "All-in-One PCs", "Custom Built PCs"],
+      brands: ["HP", "Dell", "Lenovo", "Custom Built", "Apple", "ASUS"]
     },
     {
-      category: "All-in-One PCs",
-      items: ["Home All-in-Ones", "Business All-in-Ones", "Touch Screen Models"],
-      brands: ["HP", "Dell", "Lenovo"]
+      category: "Peripherals & Accessories",
+      items: ["Monitors", "Keyboards", "Mice", "Printers", "Scanners", "External Storage", "Webcams", "Headsets"],
+      brands: ["Logitech", "HP", "Dell", "Samsung", "LG", "Corsair"]
+    },
+    {
+      category: "Networking Hardware",
+      items: ["Routers", "Switches", "Access Points", "Network Adapters", "Network Cables", "Patch Panels"],
+      brands: ["Cisco", "HP", "D-Link", "TP-Link", "Netgear", "Ubiquiti"]
     }
   ];
 
@@ -40,7 +45,7 @@ const HardwareSolutions = () => {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-vtech-gray mb-8 animate-fade-in">Hardware Solutions</h1>
           
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {products.map((category, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow animate-fade-in">
                 <h2 className="text-xl font-semibold mb-4">{category.category}</h2>

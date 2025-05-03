@@ -10,12 +10,14 @@ const SoftwareDevelopment = () => {
     {
       category: "Web Development",
       items: [
-        "Custom Web Applications",
-        "E-commerce Solutions",
+        "Responsive Website Design",
+        "E-commerce Platforms",
         "Progressive Web Apps",
-        "Web Portal Development"
+        "Web Portal Development",
+        "Content Management Systems",
+        "Custom Web Applications"
       ],
-      technologies: ["React", "Node.js", "Angular", "Vue.js"]
+      technologies: ["React", "Angular", "Vue.js", "Node.js", "PHP", "ASP.NET"]
     },
     {
       category: "Mobile Development",
@@ -23,19 +25,35 @@ const SoftwareDevelopment = () => {
         "iOS Applications",
         "Android Applications",
         "Cross-platform Apps",
-        "Mobile UI/UX Design"
+        "Mobile UI/UX Design",
+        "Mobile App Testing",
+        "App Store Optimization"
       ],
-      technologies: ["React Native", "Flutter", "Swift", "Kotlin"]
+      technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Xamarin", "Ionic"]
     },
     {
       category: "Enterprise Solutions",
       items: [
-        "ERP Systems",
-        "CRM Solutions",
-        "Business Intelligence",
-        "Custom Software Solutions"
+        "Enterprise Resource Planning (ERP)",
+        "Customer Relationship Management (CRM)",
+        "Business Intelligence Solutions",
+        "Supply Chain Management",
+        "Human Resource Management",
+        "Inventory Management Systems"
       ],
-      technologies: [".NET", "Java", "Python", "PHP"]
+      technologies: [".NET", "Java", "Python", "Oracle", "SAP", "Microsoft Dynamics"]
+    },
+    {
+      category: "Software Services",
+      items: [
+        "Software Installation & Configuration",
+        "Software Integration",
+        "Legacy System Migration",
+        "Software Upgrades & Updates",
+        "Technical Support & Maintenance",
+        "User Training & Documentation"
+      ],
+      technologies: ["Microsoft Office", "Adobe Creative Suite", "QuickBooks", "AutoCAD", "Accounting Software", "Industry-specific Software"]
     }
   ];
 
@@ -49,9 +67,9 @@ const SoftwareDevelopment = () => {
       
       <main className="py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-vtech-gray mb-8 animate-fade-in">Software Development</h1>
+          <h1 className="text-4xl font-bold text-vtech-gray mb-8 animate-fade-in">Software Solutions</h1>
           
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow animate-fade-in">
                 <Code className="text-vtech-blue mb-4" size={24} />

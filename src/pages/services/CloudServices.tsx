@@ -13,9 +13,11 @@ const CloudServices = () => {
         "Infrastructure as a Service (IaaS)",
         "Virtual Machines",
         "Cloud Storage Solutions",
-        "Backup and Disaster Recovery"
+        "Backup and Disaster Recovery",
+        "Hybrid Cloud Solutions",
+        "Multi-Cloud Management"
       ],
-      providers: ["AWS", "Microsoft Azure", "Google Cloud"]
+      providers: ["AWS (Amazon Web Services)", "Microsoft Azure", "Google Cloud Platform", "IBM Cloud"]
     },
     {
       category: "Cloud Applications",
@@ -23,9 +25,11 @@ const CloudServices = () => {
         "Software as a Service (SaaS)",
         "Email and Communication",
         "Productivity Tools",
-        "Collaboration Platforms"
+        "Collaboration Platforms",
+        "Customer Relationship Management",
+        "Enterprise Resource Planning"
       ],
-      providers: ["Microsoft 365", "Google Workspace", "Salesforce"]
+      providers: ["Microsoft 365", "Google Workspace", "Salesforce", "Dropbox Business", "Slack", "Zoom"]
     },
     {
       category: "Cloud Management",
@@ -33,9 +37,23 @@ const CloudServices = () => {
         "Cloud Migration Services",
         "Cloud Security",
         "Performance Monitoring",
-        "Cost Optimization"
+        "Cost Optimization",
+        "Auto-scaling Solutions",
+        "DevOps Implementation"
       ],
-      providers: ["VMware", "Citrix", "Red Hat"]
+      providers: ["VMware", "Citrix", "Red Hat", "CloudFlare", "New Relic", "Datadog"]
+    },
+    {
+      category: "Cloud Consulting",
+      items: [
+        "Cloud Strategy Development",
+        "Architecture Design",
+        "Cloud Readiness Assessment",
+        "Compliance & Governance",
+        "Staff Training & Knowledge Transfer",
+        "24/7 Cloud Support"
+      ],
+      providers: ["AWS Partner Network", "Microsoft Azure Experts", "Google Cloud Partners", "IBM Business Partners"]
     }
   ];
 
@@ -51,7 +69,7 @@ const CloudServices = () => {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-vtech-gray mb-8 animate-fade-in">Cloud Services</h1>
           
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow animate-fade-in">
                 <Cloud className="text-vtech-blue mb-4" size={24} />

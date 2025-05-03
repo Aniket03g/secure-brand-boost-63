@@ -11,13 +11,13 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const PartnersSection = () => {
   const partners = [
-    { name: "HP", logo: "/lovable-uploads/f922908d-fde3-4166-8180-7c89af63174f.png" },
-    { name: "Dell", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/1200px-Dell_logo_2016.svg.png" },
-    { name: "Lenovo", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/1280px-Lenovo_logo_2015.svg.png" },
-    { name: "Cisco", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1280px-Cisco_logo_blue_2016.svg.png" },
-    { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1280px-Microsoft_logo.svg.png" },
-    { name: "Acer", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Acer_2011.svg/1280px-Acer_2011.svg.png" },
-    { name: "D-Link", logo: "/lovable-uploads/f02ab59d-32d1-4b93-a13f-b075b8a8d960.png" },
+    { name: "HP", logo: "/lovable-uploads/f922908d-fde3-4166-8180-7c89af63174f.png", className: "max-h-16" },
+    { name: "Dell", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/1200px-Dell_logo_2016.svg.png", className: "max-h-12" },
+    { name: "Lenovo", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/1280px-Lenovo_logo_2015.svg.png", className: "max-h-12" },
+    { name: "Cisco", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1280px-Cisco_logo_blue_2016.svg.png", className: "max-h-12" },
+    { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1280px-Microsoft_logo.svg.png", className: "max-h-12" },
+    { name: "Acer", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Acer_2011.svg/1280px-Acer_2011.svg.png", className: "max-h-12" },
+    { name: "D-Link", logo: "/lovable-uploads/f02ab59d-32d1-4b93-a13f-b075b8a8d960.png", className: "max-h-12" },
   ];
 
   const isMobile = useIsMobile();
@@ -61,7 +61,7 @@ const PartnersSection = () => {
                     <img
                       src={partner.logo}
                       alt={`${partner.name} logo`}
-                      className="max-h-12 max-w-full hover:opacity-75 transition-all"
+                      className={`${partner.className} max-w-full hover:opacity-75 transition-all`}
                     />
                   </div>
                 </CarouselItem>

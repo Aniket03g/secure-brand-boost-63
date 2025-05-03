@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { Server, Network, Shield, Cpu, Users, Code } from "lucide-react";
+import { Server, Shield, Cpu, Users, Code } from "lucide-react";
 
 interface ServiceCardProps {
   title: string;
@@ -38,40 +38,34 @@ const Services = () => {
   const services = [
     {
       title: "IT Infrastructure",
-      description: "Complete IT infrastructure design, implementation and management solutions tailored to your business needs. We help you build and maintain robust, scalable, and secure IT environments.",
+      description: "Complete IT infrastructure design, implementation and management solutions tailored to your business needs. We help you build and maintain robust, scalable, and secure IT environments, from setting up office server rooms to implementing network solutions.",
       icon: <Server size={24} />,
-      link: "/services/infrastructure"
+      link: "/services/it-infrastructure"
     },
     {
-      title: "Networking Solutions",
-      description: "Design and implementation of networking solutions using hardware from top vendors like Cisco, HP, D-Link and more. From small office networks to enterprise-grade infrastructure.",
-      icon: <Network size={24} />,
-      link: "/services/networking"
+      title: "Software Solutions",
+      description: "Software delivery, installation, configuration, and custom development services. We provide web development, mobile applications, enterprise solutions and software services to meet your specific business requirements.",
+      icon: <Code size={24} />,
+      link: "/services/software-development"
     },
     {
       title: "Security Services",
-      description: "Comprehensive security solutions including firewalls, intrusion detection, security audits, and policy implementation to protect your business from evolving cyber threats.",
+      description: "Comprehensive security solutions including firewalls, antiviruses, intrusion detection systems, security audits, and policy implementation to protect your business from evolving cyber threats.",
       icon: <Shield size={24} />,
-      link: "/services/security"
+      link: "/services/security-services"
     },
     {
       title: "Hardware Solutions",
-      description: "Premium hardware solutions from trusted brands like HP, Dell, Lenovo, and Acer. We provide servers, workstations, laptops, storage solutions and more.",
+      description: "Premium hardware solutions including laptops, desktops, servers, all-in-one PCs, peripherals, and networking equipment from trusted brands like HP, Dell, Lenovo, and Acer.",
       icon: <Cpu size={24} />,
-      link: "/services/hardware"
+      link: "/services/hardware-solutions"
     },
     {
       title: "IT Consultancy",
       description: "Expert advice and strategic planning for your IT requirements. Our consultants help you make informed decisions about your IT investments and infrastructure needs.",
       icon: <Users size={24} />,
-      link: "/services/consultancy"
-    },
-    {
-      title: "Software Development",
-      description: "Custom software development and integration services to meet your specific business requirements. We develop and implement solutions that streamline your operations.",
-      icon: <Code size={24} />,
-      link: "/services/software"
-    },
+      link: "/services/it-consultancy"
+    }
   ];
 
   useEffect(() => {

@@ -13,9 +13,11 @@ const MicrosoftSolutions = () => {
         "Windows 11 Pro",
         "Windows 11 Home",
         "Windows 10 Pro",
-        "Windows Server"
+        "Windows 10 Enterprise",
+        "Windows Server 2022",
+        "Windows Server 2019"
       ],
-      features: ["Genuine License", "Official Support", "Security Updates"]
+      features: ["Genuine License", "Official Support", "Security Updates", "Volume Licensing Options"]
     },
     {
       category: "Microsoft 365",
@@ -23,9 +25,11 @@ const MicrosoftSolutions = () => {
         "Microsoft 365 Business Basic",
         "Microsoft 365 Business Standard",
         "Microsoft 365 Business Premium",
-        "Microsoft 365 Enterprise"
+        "Microsoft 365 Apps for Business",
+        "Microsoft 365 Enterprise E3",
+        "Microsoft 365 Enterprise E5"
       ],
-      features: ["Exchange Email", "SharePoint", "Teams", "Office Applications"]
+      features: ["Exchange Email", "SharePoint", "Teams", "Office Applications", "OneDrive Storage", "Security Features"]
     },
     {
       category: "Enterprise Solutions",
@@ -33,9 +37,23 @@ const MicrosoftSolutions = () => {
         "Azure Services",
         "Dynamics 365",
         "Power Platform",
-        "SQL Server"
+        "SQL Server",
+        "SharePoint Server",
+        "Exchange Server"
       ],
-      features: ["Cloud Integration", "Business Intelligence", "Automation"]
+      features: ["Cloud Integration", "Business Intelligence", "Automation", "Scalable Solutions", "Enterprise Support"]
+    },
+    {
+      category: "Productivity Software",
+      items: [
+        "Office 2021",
+        "Office 2019",
+        "Visio",
+        "Project",
+        "Visual Studio",
+        "Power BI"
+      ],
+      features: ["Perpetual Licensing", "Latest Features", "Cross-platform Support", "Installation Support"]
     }
   ];
 
@@ -51,7 +69,7 @@ const MicrosoftSolutions = () => {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-vtech-gray mb-8 animate-fade-in">Microsoft Solutions</h1>
           
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {products.map((product, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow animate-fade-in">
                 <ShoppingCart className="text-vtech-blue mb-4" size={24} />
