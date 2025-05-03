@@ -1,5 +1,6 @@
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -17,25 +18,39 @@ import SoftwareDevelopment from "./pages/services/SoftwareDevelopment";
 import CloudServices from "./pages/services/CloudServices";
 import "./App.css";
 
+// ScrollToTop component to handle scrolling on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
+  return null;
+};
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/certificates" element={<Certificates />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/clients" element={<Clients />} />
-      <Route path="/products" element={<Products />} />
-      <Route path="/services/it-consultancy" element={<ITConsultancy />} />
-      <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
-      <Route path="/services/security-services" element={<SecurityServices />} />
-      <Route path="/services/hardware-solutions" element={<HardwareSolutions />} />
-      <Route path="/services/microsoft-solutions" element={<MicrosoftSolutions />} />
-      <Route path="/services/software-development" element={<SoftwareDevelopment />} />
-      <Route path="/services/cloud-services" element={<CloudServices />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/certificates" element={<Certificates />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/clients" element={<Clients />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/services/it-consultancy" element={<ITConsultancy />} />
+        <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
+        <Route path="/services/security-services" element={<SecurityServices />} />
+        <Route path="/services/hardware-solutions" element={<HardwareSolutions />} />
+        <Route path="/services/microsoft-solutions" element={<MicrosoftSolutions />} />
+        <Route path="/services/software-development" element={<SoftwareDevelopment />} />
+        <Route path="/services/cloud-services" element={<CloudServices />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 
