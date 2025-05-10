@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -25,12 +26,12 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				vtech: {
-					blue: '#0067B9',
-					lightBlue: '#4A90E2',
-					darkBlue: '#00477F',
-					purple: '#7A55C7',
-					gray: '#333333',
-					lightGray: '#F1F1F1',
+					blue: '#3B82F6',
+					lightBlue: '#60A5FA', 
+					darkBlue: '#2563EB',
+					purple: '#8B5CF6',
+					gray: '#F1F5F9',
+					lightGray: '#F8FAFC',
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -78,26 +79,26 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0', opacity: '0' },
+					to: { height: 'var(--radix-accordion-content-height)', opacity: '1' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)', opacity: '1' },
+					to: { height: '0', opacity: '0' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'hero-pattern': 'linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("/lovable-uploads/6c24bed7-8c07-4330-8f92-070d97bc0b10.png")',
+			},
+			boxShadow: {
+				'neon': '0 0 5px theme("colors.primary.DEFAULT"), 0 0 20px theme("colors.primary.DEFAULT")',
+				'neon-lg': '0 0 10px theme("colors.accent.DEFAULT"), 0 0 30px theme("colors.accent.DEFAULT")',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
