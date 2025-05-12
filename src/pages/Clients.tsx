@@ -61,23 +61,19 @@ const Clients = () => {
         "Kirloskar Pneumatic Ltd. Pune",
         "Kirloskar Oil Engine Ltd. Pune",
         "Praj Industries Ltd. Pune",
-        "Alfa Laval India Ltd. Pune"
+        "Alfa Laval India Ltd. Pune",
+        "Spirax Marshall Ltd. Pune",
+        "Forbes Marshall Ltd. Pune"
       ]
     },
     {
       title: "Technology & IT",
       icon: <Globe size={24} className="text-vtech-blue" />,
       clients: [
-        "Symantec Pune",
-        "Aftek Infosys Ltd Pune",
-        "CMS Computers Ltd. Pune",
+        "Symantec (now part of Broadcom) Pune",
         "NCRA /TIFR Pune",
         "Blue Crest S/W & Consultancy Services, Pune USA Based MNC",
-        "MBO Computers Pvt. Ltd Pune",
-        "Prompt Computer Services, Pune",
-        "Blue Chip Semiconductors Pvt. Ltd Pune",
-        "Romax Solutions Pvt. Ltd Pune UK Based MNC",
-        "E-q Technologic India Pvt. Ltd USA Based MNC"
+        "Blue Chip Semiconductors Pvt. Ltd Pune"
       ]
     },
     {
@@ -88,8 +84,6 @@ const Clients = () => {
         "Earth Solutions Ltd, Kenya, Africa",
         "Reval Analytical Services, Pune USA Based MNC",
         "Blue Crest S/W & Consultancy Services, Pune USA Based MNC",
-        "Romax Solutions Pvt. Ltd Pune UK Based MNC",
-        "E-q Technologic India Pvt. Ltd USA Based MNC",
         "Pier burg India Pvt. Ltd. German Based MNC"
       ]
     }

@@ -10,13 +10,15 @@ import {
 
 const PartnersSection = () => {
   const partners = [
-    { name: "HP", logo: "/lovable-uploads/f922908d-fde3-4166-8180-7c89af63174f.png", className: "max-h-20" },
+    { name: "HP", logo: "/lovable-uploads/f922908d-fde3-4166-8180-7c89af63174f.png", className: "max-h-24" }, // Increased the HP logo size
     { name: "Dell", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/1200px-Dell_logo_2016.svg.png", className: "max-h-12" },
     { name: "Lenovo", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/1280px-Lenovo_logo_2015.svg.png", className: "max-h-12" },
     { name: "Cisco", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1280px-Cisco_logo_blue_2016.svg.png", className: "max-h-12" },
     { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1280px-Microsoft_logo.svg.png", className: "max-h-12" },
     { name: "Acer", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Acer_2011.svg/1280px-Acer_2011.svg.png", className: "max-h-12" },
     { name: "D-Link", logo: "/lovable-uploads/f02ab59d-32d1-4b93-a13f-b075b8a8d960.png", className: "max-h-12" },
+    { name: "Quick Heal", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Quick_Heal_logo.svg/1200px-Quick_Heal_logo.svg.png", className: "max-h-12" },
+    { name: "Net Protector", logo: "https://www.netprotector.com/images/net-protector-logo.png", className: "max-h-12" },
   ];
 
   const [api, setApi] = useState<any>(null);

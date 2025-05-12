@@ -1,5 +1,5 @@
 
-import { Server, Shield, Cpu, Cloud, ShoppingCart, Code, Users } from 'lucide-react';
+import { Server, Shield, Cpu, Cloud, ShoppingCart, Code, Users, Database } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface ServiceCardProps {
@@ -11,18 +11,18 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, link }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-      <div className="inline-block p-3 rounded-lg bg-vtech-blue bg-opacity-10 text-vtech-blue mb-4">
+    <div className="glass-card rounded-lg p-6 hover:shadow-lg transition-shadow animate-fade-in hover-lift">
+      <div className="inline-block p-3 rounded-lg bg-accent bg-opacity-10 text-accent mb-4">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-gray-600 mb-4">{description}</p>
+      <h3 className="text-xl font-semibold mb-3 text-foreground">{title}</h3>
+      <p className="text-muted-foreground mb-4">{description}</p>
       <Link 
         to={link} 
-        className="text-vtech-blue hover:text-vtech-darkBlue font-medium inline-flex items-center"
+        className="text-accent hover:text-accent/80 font-medium inline-flex items-center group"
       >
         Learn More
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </Link>
@@ -73,16 +73,22 @@ const ServicesSection = () => {
       description: "Expert advice and strategic planning for your IT requirements and digital transformation initiatives.",
       icon: <Users size={24} />,
       link: "/services/it-consultancy"
+    },
+    {
+      title: "Core Banking Services",
+      description: "Comprehensive banking solutions including transaction processing, account management, loans, deposits and financial reporting systems.",
+      icon: <Database size={24} />,
+      link: "/services/core-banking-services"
     }
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-card">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-vtech-gray">Our Services</h2>
-          <div className="w-24 h-1 bg-vtech-blue mx-auto mt-4 mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold gradient-text">Our Services</h2>
+          <div className="w-24 h-1 bg-accent mx-auto mt-4 mb-6"></div>
+          <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
             We provide a wide range of IT services and solutions to help your business thrive in the digital era.
           </p>
         </div>
@@ -102,7 +108,7 @@ const ServicesSection = () => {
         <div className="text-center mt-10">
           <Link 
             to="/services" 
-            className="bg-vtech-blue text-white hover:bg-vtech-darkBlue transition-colors px-6 py-3 rounded-md font-medium inline-flex items-center"
+            className="bg-accent text-white hover:bg-accent/90 transition-colors px-6 py-3 rounded-md font-medium inline-flex items-center hover-scale hover-glow"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             View All Services

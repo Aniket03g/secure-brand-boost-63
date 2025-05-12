@@ -1,3 +1,4 @@
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SecureContactForm from "../components/SecureContactForm";
@@ -61,8 +62,7 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-medium mb-1">Email Us</h3>
                       <p className="text-gray-600">
-                        info@vtechnologies.com<br />
-                        sales@vtechnologies.com
+                        info@vtechnologies.com
                       </p>
                     </div>
                   </div>

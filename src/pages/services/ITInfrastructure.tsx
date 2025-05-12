@@ -21,7 +21,7 @@ const ITInfrastructure = () => {
         "Structured Cabling",
         "Physical Security Systems"
       ],
-      providers: ["Dell", "HP", "IBM", "Lenovo", "APC", "Tripp Lite"]
+      providers: ["Dell", "HP", "IBM", "Lenovo", "APC"]
     },
     {
       category: "Network Infrastructure",
@@ -33,7 +33,7 @@ const ITInfrastructure = () => {
         "Voice & Video Systems",
         "Internet Service Management"
       ],
-      providers: ["Cisco", "Juniper", "HP", "Aruba", "Ubiquiti", "MikroTik"]
+      providers: ["Cisco", "Juniper", "HP", "Aruba", "Ubiquiti"]
     },
     {
       category: "Server & Storage Infrastructure",
@@ -45,7 +45,7 @@ const ITInfrastructure = () => {
         "Disaster Recovery Planning",
         "High Availability Solutions"
       ],
-      providers: ["NetApp", "EMC", "HP", "IBM", "Dell", "VMware"]
+      providers: ["Dell EMC", "HP", "IBM", "Dell", "VMware"]
     },
     {
       category: "IT Infrastructure Management",
@@ -87,7 +87,7 @@ const ITInfrastructure = () => {
                   ))}
                 </ul>
                 <div className="mt-4">
-                  <h3 className="text-sm font-medium text-gray-500">Providers</h3>
+                  <h3 className="text-sm font-medium text-gray-500">Technology Partners</h3>
                   <div className="flex flex-wrap gap-2 mt-2">
                     {service.providers.map((provider, idx) => (
                       <span key={idx} className="bg-gray-100 px-3 py-1 rounded-full text-sm">

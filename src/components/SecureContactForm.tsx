@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Shield, AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
+import { Shield, AlertCircle, CheckCircle2, Loader2, RotateCw } from 'lucide-react';
 import { checkRateLimit, isValidEmail, containsSpamPatterns, isSuspiciousMessage, isHoneypotFilled } from '../utils/security';
 
 interface FormValues {
@@ -11,6 +11,7 @@ interface FormValues {
   message: string;
   captchaResponse: string;
   honeypot: string; // Hidden field for spam detection
+  puzzlePosition: number;
 }
 
 interface FormErrors {
@@ -19,6 +20,7 @@ interface FormErrors {
   phone?: string;
   message?: string;
   captcha?: string;
+  puzzle?: string;
 }
 
 const SecureContactForm = () => {
@@ -29,7 +31,8 @@ const SecureContactForm = () => {
     company: '',
     message: '',
     captchaResponse: '',
-    honeypot: '' // Added the missing honeypot field
+    honeypot: '',
+    puzzlePosition: Math.floor(Math.random() * 9)
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
@@ -40,6 +43,7 @@ const SecureContactForm = () => {
     Math.floor(Math.random() * 10)
   ]);
   const [captchaInput, setCaptchaInput] = useState('');
+  const [puzzleCompleted, setPuzzleCompleted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -72,6 +76,10 @@ const SecureContactForm = () => {
       newErrors.captcha = 'Please solve the calculation correctly';
     }
     
+    if (!puzzleCompleted) {
+      newErrors.puzzle = 'Please complete the puzzle verification';
+    }
+    
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -82,6 +90,23 @@ const SecureContactForm = () => {
       Math.floor(Math.random() * 10)
     ]);
     setCaptchaInput('');
+  };
+
+  const refreshPuzzle = () => {
+    setPuzzleCompleted(false);
+    setFormValues(prev => ({
+      ...prev,
+      puzzlePosition: Math.floor(Math.random() * 9)
+    }));
+  };
+
+  const handlePuzzleTileClick = (position: number) => {
+    if (position === formValues.puzzlePosition) {
+      setPuzzleCompleted(true);
+      if (errors.puzzle) {
+        setErrors(prev => ({ ...prev, puzzle: undefined }));
+      }
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -109,9 +134,11 @@ const SecureContactForm = () => {
           company: '',
           message: '',
           captchaResponse: '',
-          honeypot: ''
+          honeypot: '',
+          puzzlePosition: Math.floor(Math.random() * 9)
         });
         
+        setPuzzleCompleted(false);
         refreshCaptcha();
         
         // Reset status after 5 seconds
@@ -235,6 +262,59 @@ const SecureContactForm = () => {
           ></textarea>
           {errors.message && (
             <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+          )}
+        </div>
+        
+        {/* Puzzle Verification */}
+        <div className="mb-6 p-4 bg-gray-50 rounded-md">
+          <label className="block mb-2 text-sm font-medium text-gray-700">
+            Verify you are not a robot *
+          </label>
+          <p className="text-sm text-gray-600 mb-3">Click on the highlighted tile to verify:</p>
+          
+          <div className="flex items-center justify-center mb-4">
+            <div className="grid grid-cols-3 gap-2 w-48">
+              {Array(9).fill(null).map((_, i) => (
+                <div 
+                  key={i} 
+                  className={`w-14 h-14 flex items-center justify-center rounded cursor-pointer transition-all ${
+                    i === formValues.puzzlePosition 
+                      ? 'bg-vtech-blue bg-opacity-70 text-white' 
+                      : 'bg-gray-200 hover:bg-gray-300'
+                  } ${puzzleCompleted && i === formValues.puzzlePosition ? 'ring-2 ring-green-500' : ''}`}
+                  onClick={() => handlePuzzleTileClick(i)}
+                >
+                  {puzzleCompleted && i === formValues.puzzlePosition ? (
+                    <CheckCircle2 size={20} className="text-green-500" />
+                  ) : (
+                    i === formValues.puzzlePosition ? "Click" : ""
+                  )}
+                </div>
+              ))}
+            </div>
+            
+            <button
+              type="button"
+              onClick={refreshPuzzle}
+              className="ml-4 p-2 text-vtech-blue hover:text-vtech-darkBlue"
+              title="Refresh puzzle"
+            >
+              <RotateCw size={18} />
+            </button>
+          </div>
+          
+          {puzzleCompleted ? (
+            <div className="text-center text-sm text-green-600 font-medium">
+              Verification successful! ✓
+            </div>
+          ) : (
+            <div className="text-center text-xs text-gray-500">
+              Click on the highlighted tile to verify you're human
+            </div>
+          )}
+          
+          {errors.puzzle && (
+            <p className="mt-2 text-sm text-red-600 text-center">{errors.puzzle}</p>
           )}
         </div>
         

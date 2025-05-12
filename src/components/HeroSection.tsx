@@ -17,7 +17,7 @@ const HeroSection = () => {
               IT Infrastructure Solutions, Management & Consultancy
             </h1>
             <p className="mt-6 text-lg md:text-xl text-foreground/80 max-w-2xl">
-              Empowering enterprises with cutting-edge technologies in the field of enterprise computing, e-Business, and web solutions.
+              Empowering enterprises with cutting-edge technologies in the field of enterprise computing, e-Business, IoT solutions, and web development.
             </p>
             
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -57,8 +57,8 @@ const HeroSection = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur-md"></div>
               <div className="relative rounded-lg overflow-hidden shadow-2xl bg-card hover-lift transition-all duration-500">
                 <img
-                  src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&w=800"
-                  alt="IT Consultancy Services"
+                  src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=800"
+                  alt="IT Infrastructure and Services"
                   className="w-full h-auto rounded-md hover:scale-105 transition-transform duration-700"
                 />
               </div>
