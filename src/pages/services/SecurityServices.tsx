@@ -1,12 +1,13 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { Helmet } from "react-helmet";
 import { Shield, Lock, AlertTriangle, Eye } from 'lucide-react';
 
 const SecurityServices = () => {
-  useEffect(() => {
+  // Remove the useEffect hook and use window.scrollTo in a componentDidMount-like pattern
+  React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
