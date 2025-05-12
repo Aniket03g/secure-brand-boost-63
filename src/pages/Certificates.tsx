@@ -28,6 +28,15 @@ const CERTIFICATES: Certificate[] = [
     category: "HP",
     image: "/lovable-uploads/f922908d-fde3-4166-8180-7c89af63174f.png",
     description: "Recognized as an HP AMPLIFY Impact Partner for 2025. This certification acknowledges our commitment to sustainable practices, digital transformation excellence, and customer value in delivering HP solutions."
+  },
+  {
+    id: 2,
+    title: "HP Sustainable Impact 3-Star Partner 2025",
+    brand: "HP",
+    date: "2025-03-01",
+    category: "Sustainability",
+    image: "/lovable-uploads/78372a86-38a6-4c1b-8508-b9d8a565dcbc.png",
+    description: "V Technologies is pleased to announce that once again in 2025 we have achieved Amplify Impact 3-Star Partner Status. We are committed to making a sustainable impact with HP! Engaging and empowering people enhancing business value through sustainability. HP Amplify Impact is helping us get there."
   }
 ];
 
@@ -77,7 +86,7 @@ const Certificates = () => {
         </div>
 
         <motion.div 
-          className="flex justify-center"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -85,7 +94,7 @@ const Certificates = () => {
           {CERTIFICATES.map((certificate) => (
             <motion.div
               key={certificate.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 max-w-md"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 max-w-md mx-auto"
               whileHover={{ y: -5 }}
               onClick={() => openCertificateDialog(certificate)}
             >
@@ -93,7 +102,7 @@ const Certificates = () => {
                 <img 
                   src={certificate.image} 
                   alt={certificate.title} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
                 <div className="absolute top-0 right-0 p-2">
                   <Badge variant="secondary" className="bg-white/80 text-gray-800">

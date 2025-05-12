@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useInView } from 'react-intersection-observer';
 
 const PartnersSection = () => {
   const partners = [
@@ -22,8 +23,10 @@ const PartnersSection = () => {
   ];
 
   const [api, setApi] = useState<any>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const { ref: sectionRef, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true
+  });
   
   // Auto-rotate the carousel
   useEffect(() => {
@@ -36,42 +39,20 @@ const PartnersSection = () => {
     return () => clearInterval(interval);
   }, [api]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   return (
-    <section ref={sectionRef} className="py-20 bg-card">
+    <section ref={sectionRef} className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className={`text-3xl md:text-4xl font-bold gradient-text mb-3 opacity-0 ${isVisible ? 'animate-fade-in' : ''}`}>
+          <h2 className={`text-3xl md:text-4xl font-bold text-gray-800 mb-3 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             Our Technology Partners
           </h2>
-          <div className={`w-24 h-1 bg-accent mx-auto mt-4 mb-6 opacity-0 ${isVisible ? 'animate-fade-in animate-delay-100' : ''}`}></div>
-          <p className={`text-lg text-foreground/70 max-w-3xl mx-auto opacity-0 ${isVisible ? 'animate-fade-in animate-delay-200' : ''}`}>
+          <div className={`w-24 h-1 bg-primary mx-auto mt-4 mb-6 transition-all duration-700 delay-100 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}></div>
+          <p className={`text-lg text-gray-600 max-w-3xl mx-auto transition-all duration-700 delay-200 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             We partner with leading technology providers to deliver the best solutions to our clients.
           </p>
         </div>
         
-        <div className={`relative px-10 opacity-0 ${isVisible ? 'animate-fade-in animate-delay-300' : ''}`}>
+        <div className={`relative px-10 transition-all duration-1000 delay-300 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
           <Carousel 
             setApi={setApi}
             className="mx-auto max-w-6xl"
@@ -83,11 +64,18 @@ const PartnersSection = () => {
             <CarouselContent>
               {partners.map((partner, index) => (
                 <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
-                  <div className="glass-card mx-2 p-6 flex items-center justify-center h-32 rounded-lg hover:shadow-inner transition-shadow hover-lift">
+                  <div 
+                    className="bg-white border border-gray-100 shadow-md mx-2 p-6 flex items-center justify-center h-32 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                    style={{ 
+                      transitionDelay: `${index * 100}ms`,
+                      opacity: inView ? 1 : 0,
+                      transform: inView ? 'translateY(0)' : 'translateY(20px)'
+                    }}
+                  >
                     <img
                       src={partner.logo}
                       alt={`${partner.name} logo`}
-                      className={`${partner.className} max-w-full filter brightness-[1.15] hover:brightness-150 transition-all duration-300`}
+                      className={`${partner.className} max-w-full hover:scale-110 transition-all duration-300`}
                     />
                   </div>
                 </CarouselItem>
