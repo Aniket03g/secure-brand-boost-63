@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
-    <div className="relative bg-[#090D1B] py-20 md:py-28 overflow-hidden">
+    <div className="relative bg-gradient-to-r from-blue-50 to-indigo-50 py-20 md:py-28 overflow-hidden">
       {/* Background effect */}
       <div className="absolute inset-0 bg-gradient-radial from-accent/10 via-transparent to-transparent"></div>
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-accent/20 rounded-full blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float animate-delay-200"></div>
       
       <div className="container relative z-10 mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
@@ -16,7 +16,7 @@ const HeroSection = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight gradient-text">
               IT Infrastructure Solutions, Management & Consultancy
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-foreground/80 max-w-2xl">
+            <p className="mt-6 text-lg md:text-xl text-gray-700 max-w-2xl">
               Empowering enterprises with cutting-edge technologies in the field of enterprise computing, e-Business, IoT solutions, and web development.
             </p>
             
@@ -55,10 +55,10 @@ const HeroSection = () => {
           <div className="md:col-span-5 opacity-0 animate-slide-in-right animate-delay-200 animate-fill-both">
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur-md"></div>
-              <div className="relative rounded-lg overflow-hidden shadow-2xl bg-card hover-lift transition-all duration-500">
+              <div className="relative rounded-lg overflow-hidden shadow-2xl bg-white hover-lift transition-all duration-500">
                 <img
-                  src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=800"
-                  alt="IT Infrastructure and Services"
+                  src="https://images.unsplash.com/photo-1581092921461-7a0b9a0f0efa?auto=format&fit=crop&w=800"
+                  alt="Server room with modern IT Infrastructure"
                   className="w-full h-auto rounded-md hover:scale-105 transition-transform duration-700"
                 />
               </div>

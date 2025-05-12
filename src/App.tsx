@@ -1,6 +1,6 @@
 
-import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Index from './pages/Index';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -20,7 +20,7 @@ import CoreBankingServices from './pages/services/CoreBankingServices';
 import './App.css';
 
 const ScrollToTop = () => {
-  const { pathname } = window.location;
+  const { pathname } = useLocation();
   
   useEffect(() => {
     window.scrollTo(0, 0);
