@@ -57,7 +57,7 @@ const HeroSection = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur-md"></div>
               <div className="relative rounded-lg overflow-hidden shadow-2xl bg-white hover-lift transition-all duration-500">
                 <img
-                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800"
+                  src="/lovable-uploads/2c50c80a-94d2-47e9-b32d-dd3af655feed.png"
                   alt="Modern IT Infrastructure visualization"
                   className="w-full h-auto rounded-md hover:scale-105 transition-transform duration-700"
                 />
