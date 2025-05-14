@@ -12,11 +12,11 @@ interface StatItemProps {
 const StatItem: React.FC<StatItemProps> = ({ icon, value, label, delay }) => {
   return (
     <div className={`text-center p-6 opacity-0 animate-fade-in animate-delay-${delay} animate-fill-both`}>
-      <div className="inline-flex items-center justify-center w-16 h-16 bg-accent bg-opacity-10 text-accent rounded-full mb-4 hover-scale">
+      <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full mb-4 shadow-lg text-white hover:scale-110 transition-transform duration-300">
         {icon}
       </div>
       <div className="text-3xl font-bold gradient-text mb-2">{value}</div>
-      <div className="text-foreground/70">{label}</div>
+      <div className="text-foreground/80 font-medium">{label}</div>
     </div>
   );
 };
@@ -48,30 +48,30 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-12 bg-card border-t border-b border-border/40">
+    <section ref={sectionRef} className="py-16 bg-card border-t border-b border-border/40">
       <div className="container mx-auto px-4 md:px-6">
         {isVisible && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <StatItem 
-              icon={<Server size={28} />} 
+              icon={<Server size={32} />} 
               value="500+" 
               label="Projects Completed" 
               delay={0}
             />
             <StatItem 
-              icon={<Users size={28} />} 
+              icon={<Users size={32} />} 
               value="50+" 
               label="Expert Consultants" 
               delay={200}
             />
             <StatItem 
-              icon={<Globe size={28} />} 
+              icon={<Globe size={32} />} 
               value="3" 
               label="Countries Served" 
               delay={400}
             />
             <StatItem 
-              icon={<Award size={28} />} 
+              icon={<Award size={32} />} 
               value="15+" 
               label="Years Experience" 
               delay={600}

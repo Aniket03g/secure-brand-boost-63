@@ -1,8 +1,14 @@
 
 import { ArrowRight, Shield, Users, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 
 const HeroSection = () => {
+  const { ref: heroRef, inView: heroInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+
   return (
     <div className="relative bg-white py-20 md:py-28 overflow-hidden">
       {/* Background effect */}
@@ -11,9 +17,9 @@ const HeroSection = () => {
       <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float animate-delay-200"></div>
       
       <div className="container relative z-10 mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          <div className="md:col-span-7 opacity-0 animate-fade-in animate-fill-both">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-800">
+        <div ref={heroRef} className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div className={`md:col-span-7 transition-all duration-1000 ${heroInView ? 'opacity-100' : 'opacity-0'}`}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight gradient-text">
               IT Infrastructure Solutions, Management & Consultancy
             </h1>
             <p className="mt-6 text-lg md:text-xl text-gray-700 max-w-2xl">
@@ -21,15 +27,15 @@ const HeroSection = () => {
             </p>
             
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="flex items-center space-x-3 opacity-0 animate-fade-in animate-delay-200 animate-fill-both hover-scale group">
+              <div className={`flex items-center space-x-3 transition-all duration-700 delay-100 ${heroInView ? 'opacity-100' : 'opacity-0'} hover-scale group`}>
                 <Shield className="text-primary animate-pulse-light" size={24} />
                 <span className="font-medium text-gray-700 group-hover:text-primary transition-colors">Secure Solutions</span>
               </div>
-              <div className="flex items-center space-x-3 opacity-0 animate-fade-in animate-delay-300 animate-fill-both hover-scale group">
+              <div className={`flex items-center space-x-3 transition-all duration-700 delay-200 ${heroInView ? 'opacity-100' : 'opacity-0'} hover-scale group`}>
                 <Users className="text-primary animate-pulse-light" size={24} />
                 <span className="font-medium text-gray-700 group-hover:text-primary transition-colors">Expert Consultants</span>
               </div>
-              <div className="flex items-center space-x-3 opacity-0 animate-fade-in animate-delay-500 animate-fill-both hover-scale group">
+              <div className={`flex items-center space-x-3 transition-all duration-700 delay-300 ${heroInView ? 'opacity-100' : 'opacity-0'} hover-scale group`}>
                 <Zap className="text-primary animate-pulse-light" size={24} />
                 <span className="font-medium text-gray-700 group-hover:text-primary transition-colors">Fast Delivery</span>
               </div>
@@ -52,13 +58,13 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <div className="md:col-span-5 opacity-0 animate-slide-in-right animate-delay-200 animate-fill-both">
+          <div className={`md:col-span-5 transition-all duration-1000 delay-300 ${heroInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur-md"></div>
               <div className="relative rounded-lg overflow-hidden shadow-2xl bg-white hover-lift transition-all duration-500">
                 <img
-                  src="/lovable-uploads/2c50c80a-94d2-47e9-b32d-dd3af655feed.png"
-                  alt="Modern IT Infrastructure visualization"
+                  src="/lovable-uploads/acdac3c8-4901-4620-9af8-36b9ec6bbbff.png"
+                  alt="Modern IT Solutions"
                   className="w-full h-auto rounded-md hover:scale-105 transition-transform duration-700"
                 />
               </div>

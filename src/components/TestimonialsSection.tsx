@@ -51,20 +51,20 @@ const TestimonialsSection = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-vtech-gray">What Our Clients Say</h2>
-          <div className="w-24 h-1 bg-vtech-blue mx-auto mt-4 mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold gradient-text">What Our Clients Say</h2>
+          <div className="w-24 h-1 bg-accent mx-auto mt-4 mb-6"></div>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Hear from our satisfied clients about their experience working with V Technologies.
           </p>
         </div>
         
         <div className="relative max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-vtech-blue to-vtech-darkBlue rounded-lg shadow-xl p-8 md:p-12 text-white">
-            <div className="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
-              <Quote size={42} className="text-vtech-blue opacity-20" />
+          <div className="bg-gradient-to-br from-primary to-accent rounded-lg shadow-xl p-8 md:p-12 text-white">
+            <div className="absolute top-6 left-6">
+              <Quote size={42} className="text-white opacity-20" />
             </div>
             
-            <div className="mb-6">
+            <div className="mb-6 relative z-10">
               {[...Array(5)].map((_, i) => (
                 <Star 
                   key={i} 
@@ -72,19 +72,19 @@ const TestimonialsSection = () => {
                   className={`inline-block mr-1 ${
                     i < testimonials[currentIndex].rating 
                       ? 'text-yellow-400 fill-current' 
-                      : 'text-gray-400'
+                      : 'text-white/40'
                   }`} 
                 />
               ))}
             </div>
             
-            <p className="text-xl italic mb-8">
+            <p className="text-xl italic mb-8 relative z-10">
               {testimonials[currentIndex].text}
             </p>
             
-            <div>
+            <div className="relative z-10">
               <h4 className="font-semibold text-lg">{testimonials[currentIndex].author}</h4>
-              <p className="opacity-90">
+              <p className="text-white/90">
                 {testimonials[currentIndex].role}, {testimonials[currentIndex].company}
               </p>
             </div>
@@ -95,8 +95,8 @@ const TestimonialsSection = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full ${
-                  currentIndex === index ? 'bg-vtech-blue' : 'bg-gray-300'
+                className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                  currentIndex === index ? 'bg-accent' : 'bg-gray-300'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -106,7 +106,7 @@ const TestimonialsSection = () => {
           <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-12 md:-translate-x-16">
             <button
               onClick={prevTestimonial}
-              className="bg-white text-vtech-gray p-2 rounded-full shadow-md hover:bg-vtech-blue hover:text-white transition-colors"
+              className="bg-white text-primary p-2 rounded-full shadow-md hover:bg-primary hover:text-white transition-colors"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={24} />
@@ -116,7 +116,7 @@ const TestimonialsSection = () => {
           <div className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-12 md:translate-x-16">
             <button
               onClick={nextTestimonial}
-              className="bg-white text-vtech-gray p-2 rounded-full shadow-md hover:bg-vtech-blue hover:text-white transition-colors"
+              className="bg-white text-primary p-2 rounded-full shadow-md hover:bg-primary hover:text-white transition-colors"
               aria-label="Next testimonial"
             >
               <ChevronRight size={24} />

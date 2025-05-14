@@ -71,17 +71,41 @@ const ITInfrastructure = () => {
       
       <main className="py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-vtech-gray mb-8 animate-fade-in">IT Infrastructure</h1>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
+            <div className="animate-fade-in">
+              <h1 className="text-4xl font-bold gradient-text mb-6">IT Infrastructure Solutions</h1>
+              <p className="text-lg text-gray-700 mb-6">
+                We design, implement, and manage robust IT infrastructure that forms the backbone of your business operations. 
+                From server rooms to network systems, we ensure your infrastructure is scalable, secure, and reliable.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Server Design</span>
+                <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Network Infrastructure</span>
+                <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Structured Cabling</span>
+                <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">24/7 Monitoring</span>
+              </div>
+            </div>
+            <div className="relative animate-slide-in-right">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur-md"></div>
+              <div className="relative rounded-lg overflow-hidden shadow-2xl bg-white hover-lift transition-all duration-500">
+                <img
+                  src="/lovable-uploads/53b0f49d-ff75-4d5f-afa8-dfa9fbce8b73.png"
+                  alt="IT Infrastructure Networking"
+                  className="w-full h-auto rounded-md hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            </div>
+          </div>
           
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow animate-fade-in">
-                <Server className="text-vtech-blue mb-4" size={24} />
+              <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
+                <Server className="text-primary mb-4" size={24} />
                 <h2 className="text-xl font-semibold mb-4">{service.category}</h2>
                 <ul className="space-y-2 mb-4">
                   {service.items.map((item, idx) => (
                     <li key={idx} className="flex items-center text-gray-600">
-                      <span className="w-2 h-2 bg-vtech-blue rounded-full mr-2"></span>
+                      <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
                       {item}
                     </li>
                   ))}
