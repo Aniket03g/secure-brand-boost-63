@@ -51,7 +51,7 @@ const TestimonialsSection = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold gradient-text">What Our Clients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">What Our Clients Say</h2>
           <div className="w-24 h-1 bg-accent mx-auto mt-4 mb-6"></div>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Hear from our satisfied clients about their experience working with V Technologies.
@@ -61,7 +61,7 @@ const TestimonialsSection = () => {
         <div className="relative max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-primary to-accent rounded-lg shadow-xl p-8 md:p-12 text-white">
             <div className="absolute top-6 left-6">
-              <Quote size={42} className="text-white opacity-20" />
+              <Quote size={42} className="text-white opacity-30" />
             </div>
             
             <div className="mb-6 relative z-10">
@@ -71,20 +71,20 @@ const TestimonialsSection = () => {
                   size={20} 
                   className={`inline-block mr-1 ${
                     i < testimonials[currentIndex].rating 
-                      ? 'text-yellow-400 fill-current' 
+                      ? 'text-yellow-300 fill-current' 
                       : 'text-white/40'
                   }`} 
                 />
               ))}
             </div>
             
-            <p className="text-xl italic mb-8 relative z-10">
+            <p className="text-xl italic mb-8 relative z-10 font-medium">
               {testimonials[currentIndex].text}
             </p>
             
             <div className="relative z-10">
               <h4 className="font-semibold text-lg">{testimonials[currentIndex].author}</h4>
-              <p className="text-white/90">
+              <p className="text-white">
                 {testimonials[currentIndex].role}, {testimonials[currentIndex].company}
               </p>
             </div>

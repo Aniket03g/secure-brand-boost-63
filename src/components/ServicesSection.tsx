@@ -53,19 +53,18 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         imagePosition === 'left' ? 'md:flex-row-reverse' : ''
       }`}>
         {imagePosition === 'left' && (
-          <div className="relative h-full">
-            <AspectRatio ratio={16/9} className="h-full">
+          <div className="h-full">
+            <div className="h-full">
               <img 
                 src={imagePath} 
                 alt={title}
                 className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
               />
-            </AspectRatio>
-            <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent pointer-events-none" />
+            </div>
           </div>
         )}
         
-        <div className="p-8 flex flex-col justify-between">
+        <div className="p-8 flex flex-col justify-between h-full">
           <div>
             <div className="inline-block p-3 rounded-lg bg-accent/10 text-accent mb-4">
               {icon}
@@ -85,15 +84,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         </div>
         
         {imagePosition === 'right' && (
-          <div className="relative h-full">
-            <AspectRatio ratio={16/9} className="h-full">
+          <div className="h-full">
+            <div className="h-full">
               <img 
                 src={imagePath} 
                 alt={title}
                 className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
               />
-            </AspectRatio>
-            <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent pointer-events-none" />
+            </div>
           </div>
         )}
       </div>
@@ -170,7 +168,7 @@ const ServicesSection = () => {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 ref={ref} className={`text-3xl md:text-4xl font-bold gradient-text transition-all duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}>Our Services</h2>
+          <h2 ref={ref} className={`text-3xl md:text-4xl font-bold text-gray-800 transition-all duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}>Our Services</h2>
           <div className={`w-24 h-1 bg-accent mx-auto mt-4 mb-6 transition-all duration-700 ${inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}></div>
           <p className={`text-lg text-gray-700 max-w-3xl mx-auto transition-all duration-700 delay-200 ${inView ? 'opacity-100' : 'opacity-0'}`}>
             We provide a wide range of IT services and solutions to help your business thrive in the digital era.
@@ -195,7 +193,7 @@ const ServicesSection = () => {
         <div className="text-center mt-16">
           <Link 
             to="/services" 
-            className={`bg-accent text-white hover:bg-accent/90 transition-all duration-500 px-8 py-4 rounded-md font-medium inline-flex items-center hover-scale hover-glow animate-shimmer`}
+            className="bg-accent text-white hover:bg-accent/90 transition-all duration-500 px-8 py-4 rounded-md font-medium inline-flex items-center hover-scale hover-glow animate-shimmer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             View All Services

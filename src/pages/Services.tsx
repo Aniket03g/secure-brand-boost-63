@@ -6,7 +6,6 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Server, Shield, Cpu, Users, Code, Cloud, ShoppingCart, Database } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface ServiceCardProps {
   title: string;
@@ -40,15 +39,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, lin
               </svg>
             </Link>
           </div>
-          <div className="relative">
-            <AspectRatio ratio={16/9} className="h-full">
-              <img 
-                src={imagePath} 
-                alt={title}
-                className="object-cover w-full h-full"
-              />
-            </AspectRatio>
-            <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent pointer-events-none" />
+          <div className="h-full">
+            <img 
+              src={imagePath} 
+              alt={title}
+              className="object-cover w-full h-full"
+            />
           </div>
         </div>
       </Card>
@@ -136,7 +132,7 @@ const Services = () => {
         <section className="bg-blue-50 text-gray-800 py-16">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text animate-fade-in">Our Services</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 animate-fade-in">Our Services</h1>
               <p className="text-xl text-gray-700 animate-fade-in animate-delay-200">
                 Comprehensive IT solutions to help your business thrive in the digital era.
               </p>
@@ -168,7 +164,7 @@ const Services = () => {
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="opacity-0 animate-slide-in-left animate-fill-both">
-                <h2 className="text-3xl font-bold gradient-text mb-6">Custom IT Solutions</h2>
+                <h2 className="text-3xl font-bold text-gray-800 mb-6">Custom IT Solutions</h2>
                 <p className="text-lg text-gray-700 mb-4">
                   Don't see exactly what you're looking for? We specialize in creating custom IT solutions tailored to your specific business requirements.
                 </p>
