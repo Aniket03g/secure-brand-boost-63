@@ -29,13 +29,12 @@ const HPCertificateCard = () => {
         </div>
         
         <div className="mt-6 flex justify-center">
-          <div className="relative w-full max-w-md overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
+          <div className="p-6 flex justify-center">
             <img 
-              src="/lovable-uploads/c7c6b8cc-2d41-4a22-ab24-a9530d392f65.png" 
-              alt="HP Partnership" 
-              className="w-full h-auto"
+              src="/lovable-uploads/d2915ce5-b99b-45ab-aead-f083b6f57707.png" 
+              alt="HP Sustainable Impact - Amplify Impact 3-Star Partner 2025" 
+              className="w-64 h-64 object-contain hover:scale-105 transition-transform"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
           </div>
         </div>
       </CardContent>
