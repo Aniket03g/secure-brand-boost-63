@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-[#0A0F1F] shadow-lg">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-3">
           <div className="flex items-center animate-fade-in">
             <Link to="/" onClick={closeMenu} className="hover-scale">
               <Logo />
@@ -42,10 +42,10 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`px-3 py-2 rounded-md text-sm lg:text-base font-medium transition-all duration-300 animate-fade-in animate-delay-${index * 100} ${
+                className={`px-3 py-2 rounded-md text-sm lg:text-base font-medium tracking-wide transition-all duration-300 animate-fade-in animate-delay-${index * 100} ${
                   location.pathname === link.path
                     ? "text-white bg-accent/80 hover:bg-accent"
-                    : "text-white/80 hover:text-white hover:bg-accent/50"
+                    : "text-white/90 hover:text-white hover:bg-accent/50"
                 }`}
               >
                 {link.name}
@@ -66,16 +66,16 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-fade-in">
-            <div className="flex flex-col space-y-2">
+          <div className="md:hidden mt-2 pb-3 animate-fade-in">
+            <div className="flex flex-col space-y-1">
               {navLinks.map((link, index) => (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`px-3 py-2 rounded-md text-base font-medium animate-fade-in animate-delay-${index * 100} ${
+                  className={`px-3 py-2 rounded-md text-base font-medium tracking-wide animate-fade-in animate-delay-${index * 100} ${
                     location.pathname === link.path
                       ? "text-white bg-accent/80"
-                      : "text-white/80 hover:text-white hover:bg-accent/50"
+                      : "text-white/90 hover:text-white hover:bg-accent/50"
                   }`}
                   onClick={closeMenu}
                 >

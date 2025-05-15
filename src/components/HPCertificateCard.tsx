@@ -10,7 +10,7 @@ const HPCertificateCard = () => {
         <div className="absolute top-4 right-4">
           <Award size={32} className="text-yellow-300 animate-pulse-light" />
         </div>
-        <CardTitle className="text-2xl">HP Amplify Impact</CardTitle>
+        <CardTitle className="text-2xl font-semibold">HP Amplify Impact</CardTitle>
         <CardDescription className="text-blue-100 text-lg">3-Star Partner Status 2025</CardDescription>
       </CardHeader>
       <CardContent className="pt-6">
@@ -19,10 +19,10 @@ const HPCertificateCard = () => {
             <Shield size={24} className="text-blue-600" />
           </div>
           <div>
-            <p className="text-gray-700 mb-4">
+            <p className="text-gray-700 mb-4 font-normal">
               V Technologies is pleased to announce that once again in 2025 we have achieved Amplify Impact 3-Star Partner Status. We are committed to making a sustainable impact with HP!
             </p>
-            <p className="text-gray-700">
+            <p className="text-gray-700 font-normal">
               Engaging and empowering people enhancing business value through sustainability. HP Amplify Impact is helping us get there.
             </p>
           </div>
